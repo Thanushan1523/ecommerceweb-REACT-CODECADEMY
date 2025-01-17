@@ -3,7 +3,7 @@ import { assets } from '../assets/assests'
 import {NavLink ,Link} from 'react-router'
 
 const Navbar = () => {
-  const[visible,setVisible] =useState(flase);
+  const[visible,setVisible] =useState(false);
   return (
     <div className='flex items-center justify-between py-5 font-medium'>
         <img src={assets.logo} className='w-20'/>
