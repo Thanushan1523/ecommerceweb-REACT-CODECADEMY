@@ -3,7 +3,9 @@ import { products } from "../assets/assests";
 export const ShopContext = createContext();
 
 const ShopContextProvider = (props) => {
-  const value = {};
+  const value = {
+    products
+  };
   return (
     <ShopContext.Provider value={value}>
         {props.children}
