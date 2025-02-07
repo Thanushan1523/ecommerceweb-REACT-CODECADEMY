@@ -33,14 +33,31 @@ const Collection = () => {
 
   }
 
-useEffect(()=> {
-  console.log(category);
-},[category])
-useEffect(()=> {
-  console.log(subCategory);
-},[subCategory])
+  const applyFilter=()=> {
+           let productsCopy =products.slice();
+           if(category.length > 0){
+            productsCopy =productsCopy.filter(item => category.includes(item.category));
+           }
+           if(subCategory.length > 0){
+            productsCopy =productsCopy.filter(item => subCategory.includes(item.subCategory));
+           }
+           setFilterProducts(productsCopy)
+  }
 
-  useEffect(()=> {setFilterProducts(products)},[])
+
+  useEffect (()=> {applyFilter()},[category,subCategory])
+
+// useEffect(()=> {
+//   console.log(category);
+// },[category])
+// useEffect(()=> {
+//   console.log(subCategory);
+// },[subCategory])
+
+  
+  
+  
+  
   return (
     <div className='flex flex-col sm:flex-row gap-1 sm:gap-10 pt-10 border-t '> 
       {/* {filter options} */}
@@ -70,7 +87,7 @@ useEffect(()=> {
           <input className='w-3' type='checkbox' value={'Topwear'} onChange={toggleSubCategory}/> Topwear
         </p>
         <p className='flex gap-2'>
-          <input className='w-3' type='checkbox' value={'Bottomwear'}onChange={toggleSubCategory}/> Bottomwear
+          <input className='w-3' type='checkbox' value={'Bottomwear'}  onChange={toggleSubCategory}/> Bottomwear
         </p>
         <p className='flex gap-2'>
           <input className='w-3' type='checkbox' value={'Winterwear'}onChange={toggleSubCategory}/> Winterwear
