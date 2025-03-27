@@ -9,6 +9,8 @@ const {productId}=useParams();
 const {products,currency} =useContext(ShopContext);
 const[productData,setProductData]= useState(false);
 const[image,setImage]=useState(' ')
+const[size,setSize]=useState(' ')
+
 const fetchProductData = async () => {
   products.find((item) =>{
     if (item._id === productId) {
@@ -56,8 +58,9 @@ useEffect(()=>{
             <p>Select Size</p>
             <div className='flex gap-2'>
               {productData.sizes.map((item, index)=>(
-                <button key={index}>{item}</button>
+                <button onClick={()=>setSize(item)} className={`border py-2 px-4 bg-gray-100 ${item ===size ?'border-orange-500':''}`} key={index}>{item}</button>
               ))}
+               <hr className='mt-8 sm:w-3/5'/>
             </div>
         </div>
         </div>
