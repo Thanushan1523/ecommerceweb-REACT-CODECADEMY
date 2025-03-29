@@ -60,8 +60,15 @@ useEffect(()=>{
               {productData.sizes.map((item, index)=>(
                 <button onClick={()=>setSize(item)} className={`border py-2 px-4 bg-gray-100 ${item ===size ?'border-orange-500':''}`} key={index}>{item}</button>
               ))}
-               <hr className='mt-8 sm:w-3/5'/>
             </div>
+        </div>
+        <button className='bg-black text-white px-8 py-3 text-sm active:bg-gray-700'>ADD TO CART</button>
+        <hr className='mt-8 sm:w-3/5'/>
+        <div className='text-sm text-gray-500 mt-5 flex flex-col gap-1'>
+          <p>100% Pass</p>
+          <p>Split Payments</p>
+          <p>Specialized lessons</p>
+
         </div>
         </div>
       </div>
