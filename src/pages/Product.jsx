@@ -84,6 +84,9 @@ useEffect(()=>{
 
         </div>
       </div>
+
+      {/* ...............related products............... */}
+        
     </div>
   ):<div className='opacity-0'></div> 
 }
