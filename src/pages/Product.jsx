@@ -72,7 +72,18 @@ useEffect(()=>{
         </div>
         </div>
       </div>
-      
+      {/* .........DESCRIPTION & REVIEW SECTION......... */}
+      <div className='mt-20'>
+        <div className='flex'>
+              <b className='border px-5 py-3 text-sm' > Description</b>
+              <p className='border px-5 py-3 text-sm' > Reviews(122)</p>
+        </div>
+        <div className='flex flex-col gap-4 border px-6 py-6 text-sm text-gray-500'>
+          <p>vhofvhofvof  jhohgori ifrnr43ity348r hrnewdfepreur hr22weju r82n24uyr8 8y0 </p>
+          <p>ygieru uy8ybehjnhyinjn eirrewffirnevwfewiynweff ey9rwbefir f 9rynrwqwrq 9y9 yfyr87r ewty9yt9</p>
+
+        </div>
+      </div>
     </div>
   ):<div className='opacity-0'></div> 
 }
