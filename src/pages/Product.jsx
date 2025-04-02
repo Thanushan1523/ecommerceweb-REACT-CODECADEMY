@@ -9,8 +9,8 @@ const Product = () => {
 const {productId}=useParams();
 const {products,currency} =useContext(ShopContext);
 const[productData,setProductData]= useState(false);
-const[image,setImage]=useState(' ')
-const[size,setSize]=useState(' ')
+const[image,setImage]=useState('')
+const[size,setSize]=useState('')
 
 const fetchProductData = async () => {
   products.find((item) =>{
@@ -25,6 +25,7 @@ const fetchProductData = async () => {
 useEffect(()=>{
   fetchProductData();
 },[productId ,products])
+
   return productData ?(
     <div className='border-t-2 pt-10 transition-opacity ease-in duration-500 opacity-100'>
       {/* product data */}
@@ -87,7 +88,9 @@ useEffect(()=>{
       </div>
 
       {/* ...............related products............... */}
-        <RelatedProducts category={productData.category} subCategory={productData.subCategory} />
+      
+  <RelatedProducts category={productData.category} subCategory={productData.subCategory} />
+
     </div>
   ):<div className='opacity-0'></div> 
 }

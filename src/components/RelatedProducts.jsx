@@ -1,6 +1,6 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext, useState ,useEffect } from 'react'
 import { ShopContext } from '../context/ShopContext'
-import { useEffect } from 'react';
+
 
 const RelatedProducts = ({category,subCategory}) => {
   const {products} =useContext(ShopContext);
@@ -11,8 +11,8 @@ const RelatedProducts = ({category,subCategory}) => {
       {
       let productsCopy =products.slice();
       productsCopy =productsCopy.filter((item)=> category === item.category);
-      productsCopy = productsCopy.filter((item)=subCategory === item.subCategory)
-      
+      productsCopy = productsCopy.filter((item)=> subCategory === item.subCategory);
+      console.log(productsCopy.slice(0,5));
       setRelated(productsCopy.slice(0,5));
      
     }
@@ -22,13 +22,11 @@ const RelatedProducts = ({category,subCategory}) => {
   
   
   return (
-    <div>
-         <h2>Related Products</h2>
-      <ul>
-        {related.map(item => (
-          <li key={item._id}>{item.name}</li>
-        ))}
-      </ul>
+    <div className='my-24'>
+
+        <div className='text-center'>
+
+        </div>
     </div>
   );
 };
