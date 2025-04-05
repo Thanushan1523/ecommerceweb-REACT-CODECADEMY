@@ -37,6 +37,24 @@ const ShopContextProvider = (props) => {
     console.log(cartItems);
   } ,[cartItems])
 
+const getCartCount=()=>{
+  let totalCount =0;
+  for(const items in cartItems){
+    for(const items in cartItems[items]){
+      try{
+        if(cartItems[items][item] >0){
+          totalCount += cartItems[items][item];
+        }
+      } catch (error){
+
+      }
+    }
+  }
+  return totalCount;
+}
+
+
+
   const value = {
     products , currency,delivery_fee,
     search,setSearch,showSearch,setShowSearch,
