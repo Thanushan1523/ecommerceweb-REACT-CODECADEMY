@@ -58,7 +58,8 @@ const getCartCount=()=>{
   const value = {
     products , currency,delivery_fee,
     search,setSearch,showSearch,setShowSearch,
-    cartItems,addToCart
+    cartItems,addToCart,
+    getCartCount
   };
   return (
     <ShopContext.Provider value={value}>
